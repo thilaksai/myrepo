@@ -23,6 +23,7 @@ public class Calculator extends HttpServlet {
     	out.println("<h1>Hello from Edureka</h1>");
         
     	int a1= Integer.parseInt(request.getParameter("n1"));
+    	System.out.print("a1 is " + a1);
         int a2= Integer.parseInt(request.getParameter("n2"));
         if(request.getParameter("r1")!=null)
         {
@@ -46,7 +47,7 @@ public class Calculator extends HttpServlet {
         
         catch(Exception e)
         {
-
+           System.out.println("In catch");
         }
     }
       public int add(int a, int b) {
