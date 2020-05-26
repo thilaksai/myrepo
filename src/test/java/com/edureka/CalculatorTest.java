@@ -69,8 +69,30 @@ public class CalculatorTest extends Mockito{
         
         writer.flush(); // it may not have been flushed yet...
         System.out.print(stringWriter.toString());
-        assertTrue("Expecting Subtraction but not found",stringWriter.toString().contains("Subtraction"));
+        assertTrue("Expecting Multiplication but not found",stringWriter.toString().contains("Multiplication"));
     }
+    
+    @Test
+    public void testDivServlet() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);       
+        HttpServletResponse response = mock(HttpServletResponse.class);    
+
+
+        when(request.getParameter("n1")).thenReturn("8");
+        when(request.getParameter("n2")).thenReturn("2");
+        when(request.getParameter("r4")).thenReturn("r4");
+        
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+
+        new Calculator().doGet(request, response);
+        
+        writer.flush(); // it may not have been flushed yet...
+        System.out.print(stringWriter.toString());
+        assertTrue("Expecting Division but not found",stringWriter.toString().contains("Division"));
+    }
+    
     //@Test
     public void testAdd() throws Exception {
 
