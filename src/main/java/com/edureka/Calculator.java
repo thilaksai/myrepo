@@ -20,7 +20,6 @@ public class Calculator extends HttpServlet {
         
     	out.println("<html>");
     	out.println("<body bgcolor=\"Aqua\">");
-    	//out.println("<body bgcolor=\"Green\">");
     	out.println("<h1>Hello from Edureka</h1>");
         
     	int a1= Integer.parseInt(request.getParameter("n1"));

@@ -19,6 +19,8 @@ public class CalculatorTest extends Mockito{
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
 
+        request.setAttribute("n1", 2);
+        request.setAttribute("n1", 8);
         request.setAttribute("r1", 1);
         
         new Calculator().doGet(request, response);
