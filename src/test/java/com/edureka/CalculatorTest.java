@@ -5,9 +5,9 @@ import javax.servlet.http.*;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.edureka.HelloWebApp;
+import com.edureka.Calculator;
 
-public class HelloWebAppTest extends Mockito{
+public class CalculatorTest extends Mockito{
 
     @Test
     public void testServlet() throws Exception {
@@ -19,7 +19,7 @@ public class HelloWebAppTest extends Mockito{
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
 
-        new HelloWebApp().doGet(request, response);
+        new Calculator().doGet(request, response);
         
         writer.flush(); // it may not have been flushed yet...
         System.out.print(stringWriter.toString());
@@ -29,14 +29,14 @@ public class HelloWebAppTest extends Mockito{
     @Test
     public void testAdd() throws Exception {
 
-        int k= new HelloWebApp().add(8,6);
+        int k= new Calculator().add(8,6);
         assertEquals("Problem with Add function:", 14, k);
         
     }
     @Test
     public void testSub() throws Exception {
 
-        int k= new HelloWebApp().sub(8,7);
+        int k= new Calculator().sub(8,7);
         assertEquals("Problem with Sub function:", 1, k);
 
     }
@@ -44,7 +44,7 @@ public class HelloWebAppTest extends Mockito{
     @Test
     public void testMul() throws Exception {
 
-        int k= new HelloWebApp().mul(8,6);
+        int k= new Calculator().mul(8,6);
         assertEquals("Problem with Mul function:", 48, k);
 
     }
