@@ -30,7 +30,7 @@ public class Calculator extends HttpServlet {
         if(request.getParameter("r3")!=null)
         {
             out.println("<h1>Multiplication</h1>"+(a1*a2));
-        }if(request.getParameter("r1")!=null)
+        }if(request.getParameter("r4")!=null)
         {
             out.println("<h1>Division</h1>"+(a1/a2));
         }
