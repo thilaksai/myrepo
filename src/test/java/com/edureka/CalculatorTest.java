@@ -19,6 +19,8 @@ public class CalculatorTest extends Mockito{
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
 
+        request.setAttribute("r1", 1);
+        
         new Calculator().doGet(request, response);
         
         writer.flush(); // it may not have been flushed yet...
