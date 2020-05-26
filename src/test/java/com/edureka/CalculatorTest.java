@@ -92,7 +92,22 @@ public class CalculatorTest extends Mockito{
         System.out.print(stringWriter.toString());
         assertTrue("Expecting Division but not found",stringWriter.toString().contains("Division"));
     }
-    
+
+    @Test
+    public void testExcServlet() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);       
+        HttpServletResponse response = mock(HttpServletResponse.class);    
+
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+
+        new Calculator().doGet(request, response);
+        
+        writer.flush(); // it may not have been flushed yet...
+        System.out.print(stringWriter.toString());
+    }
+
     //@Test
     public void testAdd() throws Exception {
 
