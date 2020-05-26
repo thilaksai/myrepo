@@ -17,7 +17,13 @@ public class Calculator extends HttpServlet {
         {
         response.setContentType("text/html");
         PrintWriter out= response.getWriter();
-        int a1= Integer.parseInt(request.getParameter("n1"));
+        
+    	out.println("<html>");
+    	out.println("<body bgcolor=\"Aqua\">");
+    	//out.println("<body bgcolor=\"Green\">");
+    	out.println("<h1>Hello from Edureka</h1>");
+        
+    	int a1= Integer.parseInt(request.getParameter("n1"));
         int a2= Integer.parseInt(request.getParameter("n2"));
         if(request.getParameter("r1")!=null)
         {
@@ -34,7 +40,11 @@ public class Calculator extends HttpServlet {
         {
             out.println("<h1>Division</h1>"+(a1/a2));
         }
+
+    	out.println("</body>");
+    	out.println("</html>");  
         }
+        
         catch(Exception e)
         {
 
