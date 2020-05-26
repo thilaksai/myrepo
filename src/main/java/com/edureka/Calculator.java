@@ -32,7 +32,7 @@ public class Calculator extends HttpServlet {
           }
           if(request.getParameter("r2")!=null)
           {
-            out.println("<h1>Substraction</h1>"+(a1-a2));
+            out.println("<h1>Subtraction</h1>"+(a1-a2));
           }
           if(request.getParameter("r3")!=null)
           {
@@ -55,10 +55,16 @@ public class Calculator extends HttpServlet {
         public int add(int a, int b) {
             return a + b ;
         }
+        
 	    public int sub(int a, int b) {
             return a - b;
         }
+	    
     	public int mul(int a, int b) {
             return a * b ;
+        }
+    	
+    	public int div(int a, int b) {
+            return a / b ;
         }
 }

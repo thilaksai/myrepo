@@ -10,14 +10,14 @@ import com.edureka.Calculator;
 public class CalculatorTest extends Mockito{
 
     @Test
-    public void testServlet() throws Exception {
+    public void testAddServlet() throws Exception {
         HttpServletRequest request = mock(HttpServletRequest.class);       
         HttpServletResponse response = mock(HttpServletResponse.class);    
 
 
         when(request.getParameter("n1")).thenReturn("8");
-        when(request.getParameter("n2")).thenReturn("1");
-        when(request.getParameter("r1")).thenReturn("1");
+        when(request.getParameter("n2")).thenReturn("2");
+        when(request.getParameter("r1")).thenReturn("r1");
         
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
@@ -27,17 +27,38 @@ public class CalculatorTest extends Mockito{
         
         writer.flush(); // it may not have been flushed yet...
         System.out.print(stringWriter.toString());
-        //assertTrue("Expecting Hello from Edureka but not found",stringWriter.toString().contains("Hello from Edureka"));
+        assertTrue("Expecting Addition but not found",stringWriter.toString().contains("Addition"));
+    }
+    
+    @Test
+    public void testSubServlet() throws Exception {
+        HttpServletRequest request = mock(HttpServletRequest.class);       
+        HttpServletResponse response = mock(HttpServletResponse.class);    
+
+
+        when(request.getParameter("n1")).thenReturn("8");
+        when(request.getParameter("n2")).thenReturn("2");
+        when(request.getParameter("r2")).thenReturn("r2");
+        
+        StringWriter stringWriter = new StringWriter();
+        PrintWriter writer = new PrintWriter(stringWriter);
+        when(response.getWriter()).thenReturn(writer);
+
+        new Calculator().doGet(request, response);
+        
+        writer.flush(); // it may not have been flushed yet...
+        System.out.print(stringWriter.toString());
+        assertTrue("Expecting Subtraction but not found",stringWriter.toString().contains("Subtraction"));
     }
 
-    @Test
+    //@Test
     public void testAdd() throws Exception {
 
         int k= new Calculator().add(8,6);
         assertEquals("Problem with Add function:", 14, k);
         
     }
-    @Test
+    //@Test
     public void testSub() throws Exception {
 
         int k= new Calculator().sub(8,7);
@@ -45,7 +66,7 @@ public class CalculatorTest extends Mockito{
 
     }
     
-    @Test
+    //@Test
     public void testMul() throws Exception {
 
         int k= new Calculator().mul(8,6);
