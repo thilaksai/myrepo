@@ -23,7 +23,6 @@ public class Calculator extends HttpServlet {
     	  out.println("<h1>Hello from Edureka</h1>");
         
     	  int a1= Integer.parseInt(request.getParameter("n1"));
-    	  System.out.print("a1 is " + a1);
           int a2= Integer.parseInt(request.getParameter("n2"));
           
           if(request.getParameter("r1")!=null)
@@ -32,15 +31,15 @@ public class Calculator extends HttpServlet {
           }
           if(request.getParameter("r2")!=null)
           {
-            out.println("<h1>Subtraction</h1>"+(a1-a2));
+            out.println("<h1>Subtraction</h1>"+ sub (a1, a2));
           }
           if(request.getParameter("r3")!=null)
           {
-            out.println("<h1>Multiplication</h1>"+(a1*a2));
+            out.println("<h1>Multiplication</h1>"+ mul (a1, a2));
           }
           if(request.getParameter("r4")!=null)
           {
-             out.println("<h1>Division</h1>"+(a1/a2));
+             out.println("<h1>Division</h1>"+ div (a1, a2));
           }
 
         	out.println("</body>");
