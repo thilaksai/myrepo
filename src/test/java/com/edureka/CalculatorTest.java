@@ -15,14 +15,14 @@ public class CalculatorTest extends Mockito{
         HttpServletResponse response = mock(HttpServletResponse.class);    
 
 
+        when(request.getParameter("n1")).thenReturn("8");
+        when(request.getParameter("n2")).thenReturn("1");
+        when(request.getParameter("r1")).thenReturn("1");
+        
         StringWriter stringWriter = new StringWriter();
         PrintWriter writer = new PrintWriter(stringWriter);
         when(response.getWriter()).thenReturn(writer);
 
-        request.setAttribute("n1", 2);
-        request.setAttribute("n1", 8);
-        request.setAttribute("r1", 1);
-        
         new Calculator().doGet(request, response);
         
         writer.flush(); // it may not have been flushed yet...
