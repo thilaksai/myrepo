@@ -131,4 +131,11 @@ public class CalculatorTest extends Mockito{
 
     }
 
+    //@Test
+    public void testDiv() throws Exception {
+
+        int k= new Calculator().div(8,4);
+        assertEquals("Problem with Mul function:", 2, k);
+
+    }
 }
