@@ -52,6 +52,7 @@ public class Calculator extends HttpServlet {
           }
         }
         public int add(int a, int b) {
+        	int ret = a + b;
             return a + b ;
         }
         
