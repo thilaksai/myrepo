@@ -48,7 +48,7 @@ public class Calculator extends HttpServlet {
         
           catch(Exception e)
           {
-              System.out.println("In exception");
+              System.out.println("In  exception");
           }
         }
         public int add(int a, int b) {
