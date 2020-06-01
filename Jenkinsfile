@@ -29,5 +29,20 @@ pipeline {
         sh 'mvn clean install'
       }
     }
+
+
+stage("Parallel") {
+  steps {
+    parallel (
+      "Taskone" : {
+        sh 'echo "In Taskone"'
+      },
+      "Tasktwo" : {
+        sh 'echo "In Tasktwo"'
+      }
+    )
+  }
+}
+
   }
 }
