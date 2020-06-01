@@ -11,7 +11,11 @@ pipeline {
         sh 'mvn clean pmd:pmd'
       }
     }
-
+    stage('Unit Test') {
+      steps{
+        sh 'mvn clean test'
+      }
+    }
   }
 
   }
