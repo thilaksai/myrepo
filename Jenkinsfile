@@ -6,7 +6,7 @@ pipeline {
 
     stage('Checkout') {
       steps{
-        git 'https://github.com/pbeniwal/calculator.git'
+        git 'https://github.com/pbeniwal/helloedureka.git'
       }
     }
   }
