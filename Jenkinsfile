@@ -4,9 +4,9 @@ pipeline {
 
   stages {
 
-    stage('Checkout') {
+    stage('Compile') {
       steps{
-        git 'https://github.com/pbeniwal/helloedureka.git'
+        sh 'mvn clean compile'
       }
     }
   }
