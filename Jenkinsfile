@@ -45,4 +45,16 @@ stage("Parallel") {
 }
 
   }
+
+post {
+    always {
+      echo 'always runs regardless of the completion status of the Pipeline run'
+    }
+    success {
+      echo 'step will run only if the build is successful'
+    }
+    failure {
+      echo 'only when the Pipeline is currently in a "failed" state run, usually expressed in the Web UI with the red indicator.'
+    }
+  }
 }
