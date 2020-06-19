@@ -1,11 +1,11 @@
-package com.edureka;
+package com.example;
 import static org.junit.Assert.*;
 import java.io.*;
 import javax.servlet.http.*;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.edureka.Calculator;
+import com.example.Calculator;
 
 public class CalculatorTest extends Mockito{
 
