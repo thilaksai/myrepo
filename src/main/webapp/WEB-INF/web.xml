@@ -3,7 +3,7 @@
   <display-name>Servlet</display-name>
   <servlet>
     <servlet-name>Servlet</servlet-name>
-    <servlet-class>com.edureka.Calculator</servlet-class>
+    <servlet-class>com.example.Calculator</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>

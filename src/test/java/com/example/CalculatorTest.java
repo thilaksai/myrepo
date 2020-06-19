@@ -5,8 +5,6 @@ import javax.servlet.http.*;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import com.example.Calculator;
-
 public class CalculatorTest extends Mockito{
 
     @Test
