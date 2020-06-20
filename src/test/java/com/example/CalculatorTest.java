@@ -8,6 +8,14 @@ import org.mockito.Mockito;
 public class CalculatorTest extends Mockito{
 
     @Test
+    public void testAdd() throws Exception {
+
+        int k= new Calculator().add(8,6);
+        assertEquals("Problem with Add function:", 14, k);
+        
+    }
+    
+    //@Test
     public void testAddServlet() throws Exception {
         HttpServletRequest request = mock(HttpServletRequest.class);       
         HttpServletResponse response = mock(HttpServletResponse.class);    
@@ -106,13 +114,7 @@ public class CalculatorTest extends Mockito{
         System.out.print(stringWriter.toString());
     }
 
-    //@Test
-    public void testAdd() throws Exception {
 
-        int k= new Calculator().add(8,6);
-        assertEquals("Problem with Add function:", 14, k);
-        
-    }
     
     //@Test
     public void testSub() throws Exception {
