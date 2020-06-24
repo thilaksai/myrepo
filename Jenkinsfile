@@ -6,16 +6,19 @@ pipeline {
         sh 'mvn clean compile '
       }
     }
-    stage('Code Review') {
-      steps{
-        sh 'mvn clean pmd:pmd'
-      }
-    }
+
     stage('Unit Test') {
       steps{
         sh 'mvn clean test'
       }
     }
+    
+    stage('Package') {
+      steps{
+        sh 'mvn clean package'
+      }
+    }
+
   }
 
   }
