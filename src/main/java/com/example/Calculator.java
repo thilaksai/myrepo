@@ -15,7 +15,7 @@ public class Calculator extends HttpServlet {
     {
         try
         {
-          response.setContentType("text/html")
+          response.setContentType("text/html");
           PrintWriter out= response.getWriter();
         
     	  out.println("<html>");
@@ -52,11 +52,11 @@ public class Calculator extends HttpServlet {
           }
         }
         public int add(int a, int b) {
-            return a + b;
+            return a + b +2 ;
         }
         
 	    public int sub(int a, int b) {
-            return a - b;
+            return a - b + 2;
         }
 	    
     	public int mul(int a, int b) {
